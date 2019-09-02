@@ -1,6 +1,13 @@
 <template>
   <div class="container">
-    <h1>Les mots qui rhymes :</h1>
+    <select v-model="action" list="action" name="" class="border-b">
+      <option>synonyms</option>
+      <!-- <option>definition</option> -->
+      <option>antonyms</option>
+      <!-- <option>examples</option> -->
+      <option>rhymes</option>
+    </select>
+    <h1>of</h1>
     <input
       v-model="query"
       type="text"
@@ -17,16 +24,18 @@ export default {
   data() {
     return {
       words: [],
-      query: null
+      query: null,
+      action: null
     }
   },
   methods: {
     async see() {
       const response = await axios.get(
-        `https://us-central1-tappable-louise.cloudfunctions.net/test-httpWordApi?query=${this.query}`
+        `https://us-central1-tappable-louise.cloudfunctions.net/test-httpWordApi?query=${this.query}&action=${this.action}`
       )
       const mots = response.data
       console.log(mots)
+      console.log(this.action)
     }
   }
 }
