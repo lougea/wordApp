@@ -14,13 +14,15 @@
       class="border m-2 hover:border-green-700"
       @keypress.enter="see()"
     />
+    <WordCloud />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import WordCloud from '~/components/WordCloud.vue'
 export default {
-  components: {},
+  components: { WordCloud },
   data() {
     return {
       words: [],
