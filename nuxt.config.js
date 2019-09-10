@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  // plugins: ['~/plugins/vuefire.js', '~/plugins/firebaseAuth.js'],
+  plugins: ['~/plugins/vuevega.js'],
   /*
    ** Middleware for router authentication
    */
